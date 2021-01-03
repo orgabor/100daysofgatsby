@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "100 days of Gatsby",
@@ -6,8 +10,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "On5ewBxYEpei5UWphNamV7iyBr9S-TLerJb-hKbIR7A",
-        spaceId: "0k0fheadf8l7",
+        accessToken: process.env.ACCESS_TOKEN,
+        spaceId: process.env.SPACE_ID,
       },
     },
     "gatsby-plugin-sharp",
