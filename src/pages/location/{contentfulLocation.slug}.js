@@ -1,5 +1,6 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
+import Layout from "../../components/Layout"
 
 const LocationPage = ({
     data: {
@@ -9,7 +10,11 @@ const LocationPage = ({
     }
 }) =>{
     return (
-        <h1>{title}</h1>
+        <Layout>
+            <h1>{title}</h1>
+            <Link to="/location">See all Audioc0re location</Link>
+        </Layout>
+       
     )
 } 
 

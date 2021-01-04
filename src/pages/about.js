@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-
-const LocationPage = ({
+import Layout from "../components/Layout"
+const AboutPage = ({
     data: {
         contentfulPage: {
             title
@@ -9,11 +9,14 @@ const LocationPage = ({
     }
 }) => {
     return (
-        <h1>{title}</h1>
+        <Layout>
+            <h1>{title}</h1>
+        </Layout>
+        
     )
 }
 
-export default LocationPage
+export default AboutPage
 
 
 export const query = graphql`
