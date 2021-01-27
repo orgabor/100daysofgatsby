@@ -19,7 +19,7 @@ import {
 const Navbar = () => {
   
     const { allContentfulPage: { nodes: pages } } = useStaticQuery(query);
-    const { allContentfulLocation: { nodes: locations } } = useStaticQuery(query)
+    const { allContentfulLocation: { nodes: locations } } = useStaticQuery(query);
     return (
         <Box margin="4">
         <Menu closeOnSelect={false}>
