@@ -7,13 +7,8 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
     MenuGroup,
-    MenuOptionGroup,
-    MenuIcon,
-    MenuCommand,
     MenuDivider,
-    Button,
 } from "@chakra-ui/react"
 
 const Navbar = () => {
@@ -46,6 +41,10 @@ const Navbar = () => {
                             </MenuItem>
                         )
                     })}
+                        <MenuItem>
+
+                            <Link as={GatsbyLink} to='/contact/'>Contact</Link>
+                        </MenuItem>
                 </MenuGroup>
                 <MenuDivider />
                 <MenuGroup title="Locations">
