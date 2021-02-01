@@ -19,6 +19,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-image",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -37,5 +38,6 @@ module.exports = {
         accessToken: process.env.FORMIUM_TOKEN,
       },
     },
+    "gatsby-plugin-preact"
   ],
 };

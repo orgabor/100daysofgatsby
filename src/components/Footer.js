@@ -1,12 +1,12 @@
 import React from "react"
-
+import { Container, Heading } from "@chakra-ui/react"
 
 const Footer = () => {
     
     return (
-        <div>
-            <h3>Footer</h3>
-        </div>
+        <Container maxW="100%"  margin = "4" centerContent>
+            <Heading as="h2" marginTop="4" marginBottom="4">Footer</Heading>
+        </Container>
     )
 }
 

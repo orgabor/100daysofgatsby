@@ -1,24 +1,37 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby'
+import {
+  Container,
+  Box,
+  Link,
+  Text,
+  List,
+  ListItem,
+  ListIcon,
+} from "@chakra-ui/react"
+import { SunIcon } from '@chakra-ui/icons'
+
 
 const Locations = () => {
 
     const { allContentfulLocation: { nodes: locations } } = useStaticQuery(query)
 
     return (
-        <div>
-        <h3>Hey check out our locations all around the World</h3>
-        <ul>
+        <Container>
+        <Text as="kbd" marginTopBottom="4">Hey check out our locations all around the World</Text>
+        <Box padding="4" bg="gray.100" maxW="xl" marginTop="4">
+        <List spacing={3}>
             {locations.map(location=>{
                 return(
-                <li key={location.id}>
-                    
-                    <Link to={`/location/${location.slug}`}>{location.title}</Link>
-                </li>
+                  <ListItem key={location.id}>
+                    <ListIcon as={SunIcon} color="green.500" />
+                    <Link as={GatsbyLink} to={`/location/${location.slug}`}>{location.title}</Link>
+                  </ListItem>
                 )
             })}
-        </ul>
-        </div>
+        </List>
+      </Box>
+      </Container>
     )
 }
 

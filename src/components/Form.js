@@ -6,7 +6,8 @@ import { Heading , Stack, Input, TextArea as ChackraTextArea,
     FormControl as ChackraFromControl,
     FormLabel,
     FormErrorMessage,
-    FormHelperText, } from "@chakra-ui/react"
+    FormHelperText,
+    Button } from "@chakra-ui/react"
 
 
 function FormControl(props) {
@@ -15,8 +16,9 @@ function FormControl(props) {
         <Stack marginTop="4">
         <ChackraFromControl id={props.id}>
             <FormLabel>{props.label}</FormLabel>
-            {props.children}
             <FormHelperText>{props.description}</FormHelperText>
+            {props.children}
+            
         </ChackraFromControl>
         </Stack>
     )
@@ -27,6 +29,7 @@ function TextInput(props){
     return (
         <FormControl>
                 <Input {...props} variant="flushed" placeholder={props.placeholder} required={props.required}/>
+                <FormErrorMessage></FormErrorMessage>
         </FormControl>
         
         
@@ -52,6 +55,13 @@ function Header(props){
     )
 }
 
+function SubmitButton(props){
+    return(
+        <Button colorScheme="teal" size="md" {...props} />
+    )
+   
+}
+
 // Always define these outside of React so that
 // components are not needlessly recreated on each render
 const myComponents = {
@@ -59,7 +69,9 @@ const myComponents = {
     TextInput,
     Header,
     FormControl,
-    TextArea
+    TextArea,
+    SubmitButton,
+
 }
 
 const AudioCoreForm = ()=> {

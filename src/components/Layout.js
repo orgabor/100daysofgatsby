@@ -6,10 +6,10 @@ const Layout = ({ children }) => {
     return <>
         
             <Navbar />
-            <Container maxW="100%"  margin="4" centerContent>
+            <Container maxW="xl" centerContent>
             {children}
-            <Footer />
             </Container>
+        <Footer />
             
 
         

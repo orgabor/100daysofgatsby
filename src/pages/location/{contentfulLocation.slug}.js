@@ -1,18 +1,26 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link as GatsbyLink } from "gatsby"
 import Layout from "../../components/Layout"
-
+import { getImage } from "gatsby-plugin-image"
+import Hero from "../../components/Hero"
+import {
+    Heading,
+    Link
+} from "@chakra-ui/react"
 const LocationPage = ({
     data: {
         contentfulLocation: {
             title
-        } 
+        },
+        file
     }
 }) =>{
+    const image = getImage(file)
     return (
         <Layout>
-            <h1>{title}</h1>
-            <Link to="/location">See all Audioc0re location</Link>
+            <Hero title="Audioc0re Skyline" image={image} />
+            <Heading as="h2" >{title}</Heading>
+            <Link as={GatsbyLink} to="/location">See all Audioc0re location</Link>
         </Layout>
        
     )
@@ -27,5 +35,15 @@ export const query = graphql`
       slug
       id
     }
+    file(name: {eq: "skyline"}) {
+    childImageSharp {
+          gatsbyImageData(
+            placeholder: BLURRED,
+            formats: [AUTO, WEBP, AVIF],
+            aspectRatio: 1.5
+            width: 800
+          )
+        }
+  }
   }
 `

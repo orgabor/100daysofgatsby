@@ -41,10 +41,10 @@ const Navbar = () => {
                             </MenuItem>
                         )
                     })}
-                        <MenuItem>
+                    <MenuItem >
 
-                            <Link as={GatsbyLink} to='/contact/'>Contact</Link>
-                        </MenuItem>
+                            <Link as={GatsbyLink} to="/contact">Contact</Link>
+                    </MenuItem>
                 </MenuGroup>
                 <MenuDivider />
                 <MenuGroup title="Locations">
