@@ -38,6 +38,23 @@ module.exports = {
         accessToken: process.env.FORMIUM_TOKEN,
       },
     },
-    "gatsby-plugin-preact"
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `AudioC0re a #100daysofGatsby challange`,
+        short_name: `AudioC0re`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`, `/location/*`],
+      },
+    },
   ],
 };
