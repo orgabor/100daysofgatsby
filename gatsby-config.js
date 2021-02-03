@@ -4,8 +4,13 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: "100 days of Gatsby",
-    siteUrl: `https://www.example.com`,
+    title: "Severus Snape",
+    titleTemplate: "%s · The Real Hero",
+    description:
+      "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+    url: "https://audioc0reorgabor.gtsb.io/", // No trailing slash allowed!
+      image: "/images/logo_vegleges.png", // Path to your image you placed in the 'static' folder
+      twitterUsername: "@orgaborweb",
   },
   plugins: [
     {
